@@ -1,0 +1,20 @@
+$ curl -s https://get.jenkins.io/war-stable/ (directory of LTS releases)
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<title>302 Found</title>
+</head><body>
+<h1>Found</h1>
+<p>The document has moved <a href="https://updates.jenkins.io/dynamic-stable-2.580.1/latestCore.txt">here</a>.</p>
+</body></html>
+
+$ curl -LO https://get.jenkins.io/war-stable/latest/jenkins.war
+-rw-rw---- 1 root root 54033126 Oct 30 23:20 jenkins.war
+-rw-rw---- 1 root root       77 Oct 30 23:20 jenkins.war.sha256
+$ cat jenkins.war.sha256
+d98032d2401c540a35613a82ed358921fcf3166d5e6eaaaf60a7941845be3251 jenkins.war
+$ sha256sum jenkins.war
+d98032d2401c540a35613a82ed358921fcf3166d5e6eaaaf60a7941845be3251  jenkins.war
+$ sha256sum -c jenkins.war.sha256
+jenkins.war: OK
+Implementation-Version: 2.580.2
+Jenkins-Version: 2.580.2

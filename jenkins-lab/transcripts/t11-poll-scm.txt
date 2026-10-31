@@ -1,0 +1,6 @@
+=== poll SCM: build 3 started by itself after one new commit ===
+result: SUCCESS
+Started by an SCM change
+Checking out Revision b49aa94e45c81c43efdf4fac410c01921345af47 (refs/remotes/origin/main)
+Build complete: orbit-widgets 1.4.1
+Finished: SUCCESS

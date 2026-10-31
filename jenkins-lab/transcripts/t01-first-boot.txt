@@ -1,0 +1,34 @@
+=== jenkins --version-equivalent: the boot log banner ===
+Running from: /home/hatch/workspace/jenkins-labwork/jenkins.war
+webroot: /home/hatch/workspace/jenkins-labwork/home1/war
+2026-10-30 23:21:38.566+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+--
+2026-10-30 23:21:50.048+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /home/hatch/workspace/jenkins-labwork/home1 found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2026-10-30 23:21:51.688+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started oeje9n.ContextHandler$CoreContextHandler@681adc8f{Jenkins v2.580.2,/,b=file:///home/hatch/workspace/jenkins-labwork/home1/war/,a=AVAILABLE,h=oeje9n.ContextHandler$CoreContextHandler$CoreToNestedHandler@3506d826{STARTED}}
+2026-10-30 23:21:51.783+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started oejs.ServerConnector@31404f3f{HTTP/1.1, (http/1.1)}{0.0.0.0:18097}
+--
+[LF]> Jenkins initial setup is required. An admin user has been created and a password generated.
+[LF]> Please use the following password to proceed to installation:
+[LF]> 
+[LF]> [REDACTED - the generated 32-character initial admin password]
+--
+[LF]> This may also be found at: /home/hatch/workspace/jenkins-labwork/home1/secrets/initialAdminPassword
+[LF]> 
+[LF]> *************************************************************
+
+=== the password also lives in a file ===
+-rw-r----- 1 root root 33 Oct 30 23:21 home1/secrets/initialAdminPassword
+
+=== GET /login (what a browser would meet) ===
+HTTP 200
+Getting Started
+Unlock Jenkins
+
+=== GET /api/json before setup (anonymous) ===
+<html><head><meta http-equiv='refresh' content='1;url=/login?from=%2Fapi%2Fjson'/><script id='redirect' data-redirect-url='/login?from=%2Fapi%2Fjson' src='/static/3fbb7569/scripts/redirect.js'></script></head><body style='background-color:white; color:white;'>
+Authentication required
+<!--
+You are authenticated as: anonymous
+Groups that you are in:
+  anonymous
+Permission you need to have (but didn'

@@ -1,0 +1,32 @@
+=== the plugin question, as the lab actually met it ===
+
+-- 1. Jenkins update-centre check, direct connection (boot5/boot6 logs) --
+boot5.log:2026-10-30 23:48:34.206+0000 [id=54]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+boot5.log:2026-10-30 23:48:44.652+0000 [id=23]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+boot6.log:2026-10-31 00:06:13.827+0000 [id=54]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+boot6.log:2026-10-31 00:06:24.226+0000 [id=23]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+   ...no catalogue file appeared under JENKINS_HOME/updates/ after several minutes; the check was still running.
+
+-- 2. the same file fetched by curl through the sandbox proxy --
+curl -L https://updates.jenkins.io/update-center.json -> HTTP 200, 3,484,863 bytes in 7.9 s
+
+-- 3. the same file fetched by a minimal Java program, direct (TlsBig.java) --
+java.net.SocketTimeoutException: Read timed out   (after 60 s read timeout; the connection opened and TLS validated, the body stalled)
+
+-- 4. Jenkins reconfigured with the environment proxy at startup (init script) --
+Lab setup: Jenkins proxy set from environment (the sandbox proxy, host:port only, no credentials)
+   ...update-centre check retried; catalogue still had not landed when the lab moved on.
+
+Conclusion recorded for the guide: plugin installation from the update centre is
+documented-only in this guide. The mechanism is proven as far as this network lets
+it go; on an ordinary connection the same clicks complete in seconds.
+
+--- Addendum, later the same night ---
+Jenkins' own update-centre check did eventually land its catalogue on its own
+(the update-centre status API later reported data present, with two update
+sites configured) - on this slow route it took on the order of ten minutes.
+The install itself was then done the manual way: the catalogue JSON was read
+directly, the dependency closure of the Pipeline suite and the Git plugin
+was computed from it (56 plugins), the .hpi files were fetched with ordinary
+downloads, and Jenkins loaded every one of them cleanly after a restart.
+See jenkins-lab/resolve_plugins.py for the closure script.

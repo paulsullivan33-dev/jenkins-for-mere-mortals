@@ -1,0 +1,22 @@
+=== build 1: result via the API ===
+result: SUCCESS
+duration_ms: 545
+artifacts: ['src/dist/release.txt']
+
+=== build 1: console output ===
+Started by user labadmin
+Running as SYSTEM
+Building in workspace /home/hatch/workspace/jenkins-labwork/home1/workspace/hello-build
+[hello-build] $ /bin/sh -xe /home/hatch/workspace/jenkins-labwork/tmp/jenkins4307157151980400875.sh
++ git clone /home/hatch/workspace/jenkins-labwork/fixture-repo src
+Cloning into 'src'...
+done.
++ cd src
++ ./build.sh
+Build complete: orbit-widgets 1.4.0
+Archiving artifacts
+Finished: SUCCESS
+=== the archived artifact, fetched back ===
+ORBIT-WIDGETS BUILD MARKER
+orbit-widgets version 1.4.0
+built at 2026-10-30T23:30:40Z

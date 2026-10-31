@@ -1,0 +1,57 @@
+=== why build 1 waited: the disk-space monitor (boot2.log, verbatim) ===
+2026-10-30 23:23:46.635+0000 [id=65]	WARNING	h.n.DiskSpaceMonitorDescriptor#markNodeOfflineOrOnline: Making Built-In Node offline temporarily due to the lack of disk space
+
+=== the fix: start Jenkins with java.io.tmpdir on a roomy disk ===
+java -Djava.io.tmpdir=<lab>/tmp -jar jenkins.war   # /tmp here is a 512 MB tmpfs: df -h /tmp
+tmpfs           512M  124K  512M   1% /tmp
+
+=== JENKINS_HOME after two builds (the whole state of Jenkins is this tree) ===
+home1
+home1/.lastStarted
+home1/config.xml
+home1/hudson.model.UpdateCenter.xml
+home1/init.groovy.d
+home1/init.groovy.d/01-lab-admin.groovy
+home1/jenkins.install.InstallUtil.lastExecVersion
+home1/jenkins.install.UpgradeWizard.state
+home1/jenkins.telemetry.Correlator.xml
+home1/jobs
+home1/jobs/hello-build
+home1/nodeMonitors.xml
+home1/plugins
+home1/queue.xml
+home1/queue.xml.bak
+home1/secret.key
+home1/secret.key.not-so-secret
+home1/secrets
+home1/secrets/hudson.console.ConsoleNote.MAC
+home1/secrets/hudson.model.Job.serverCookie
+home1/secrets/hudson.model.User.DIRNAMES
+home1/secrets/initialAdminPassword
+home1/secrets/jenkins.model.Jenkins.crumbSalt
+home1/secrets/jenkins.security.csp.ReportingContext.key
+home1/secrets/master.key
+home1/userContent
+home1/userContent/readme.txt
+home1/users
+home1/users/admin_df70ef6a0a74e16eaa38cabb6d8262b7f4b050c0243957bccb2ab357a9ce14ba
+home1/users/labadmin_b324a0f6e70045cbc4a6b5c72951122d049d2536814622f122f0447a4a2b0037
+home1/war
+home1/workspace
+home1/workspace/hello-build
+
+66M	home1
+=== JENKINS_HOME with plugins and both jobs (end of the lab) ===
+plugin files (.jpi) in home1/plugins: 112
+home1/jobs
+home1/jobs/hello-build
+home1/jobs/hello-build/builds
+home1/jobs/hello-build/builds/1
+home1/jobs/hello-build/builds/2
+home1/jobs/hello-build/builds/3
+home1/jobs/orbit-pipeline
+home1/jobs/orbit-pipeline/builds
+home1/jobs/orbit-pipeline/builds/1
+home1/jobs/orbit-pipeline/builds/2
+home1/jobs/orbit-pipeline/builds/3
+159M	home1

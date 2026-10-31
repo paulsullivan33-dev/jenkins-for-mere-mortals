@@ -1,0 +1,11 @@
+=== init script ran (from boot2.log) ===
+Lab setup: admin account 'labadmin' created by init script
+2026-10-30 23:23:41.387+0000 [id=30]	INFO	hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+
+=== GET /api/json with the lab admin basic auth ===
+{"_class":"hudson.model.Hudson","assignedLabels":[{"name":"built-in"}],"mode":"NORMAL","nodeDescription":"the Jenkins controller's built-in node","nodeName":"","numExecutors":2,"description":null,"jobs":[],"overallLoad":{},"primaryView":{"_class":"hudson.model.AllView","name":"all","url":"http://127.0.0.1:18097/"},"quietDownReason":null,"quietingDown":false,"slaveAgentPort":-1,"unlabeledLoad":{"_class":"jenkins.model.UnlabeledLoadStatistics"},"url":null,"useCrumbs":true,"useSecurity":true,"views":[{"_class":"hudson.model.AllView","name":"all","url":"http://127.0.0.1:18097/"}]}
+
+=== wrong password is refused ===
+HTTP 401
+=== anonymous is refused too ===
+HTTP 403

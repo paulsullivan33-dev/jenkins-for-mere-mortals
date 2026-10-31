@@ -1,0 +1,19 @@
+=== orbit-pipeline build 1: console output ===
+Started by user labadmin
+Obtained Jenkinsfile from git /home/hatch/workspace/jenkins-labwork/fixture-repo
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /home/hatch/workspace/jenkins-labwork/home1/workspace/orbit-pipeline
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+ERROR: Checkout of Git remote '/home/hatch/workspace/jenkins-labwork/fixture-repo' aborted because it references a local directory, which may be insecure. You can allow local checkouts anyway by setting the system property 'hudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT' to true.
+ERROR: Maximum checkout retry attempts reached, aborting
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: Checkout of Git remote '/home/hatch/workspace/jenkins-labwork/fixture-repo' aborted because it references a local directory, which may be insecure. You can allow local checkouts anyway by setting the system property 'hudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT' to true.
+Finished: FAILURE

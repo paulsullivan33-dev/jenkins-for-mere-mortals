@@ -1,0 +1,8 @@
+=== a POST with no CSRF crumb is refused (this is the crumb doing its job) ===
+HTTP 403
+=== fetch a crumb, keep the session cookie ===
+{"_class":"hudson.security.csrf.DefaultCrumbIssuer","crumb":"2d9c8f42bcf9d4e117b3a599bbf3b2c15c7af28241cf311e9bc7459de5d3550b","crumbRequestField":"Jenkins-Crumb"}
+=== create the job ===
+HTTP 200
+=== the job exists ===
+['hello-build']

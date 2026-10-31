@@ -1,0 +1,30 @@
+site_name: Jenkins for Mere Mortals
+site_description: Jenkins the automation server in plain terms. What continuous integration means, installing the war file and proving it with its checksum, first boot and scripted setup, freestyle jobs and Jenkinsfile pipelines run for real, triggers, credentials, plugins, backups, and the limits stated plainly.
+site_url: https://paulsullivan33-dev.github.io/jenkins-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text CC BY 4.0, code MIT'
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What Jenkins Is: what-jenkins-is.md
+  - The Moving Parts: the-moving-parts.md
+  - Installing Jenkins: installing-jenkins.md
+  - First Boot and Setup: first-boot-and-setup.md
+  - Your First Job: your-first-job.md
+  - Reading a Build: reading-a-build.md
+  - Freestyle and Pipeline: freestyle-and-pipeline.md
+  - Triggers: triggers.md
+  - Credentials and Secrets: credentials-and-secrets.md
+  - Plugins: plugins.md
+  - Agents: agents.md
+  - Backups and Housekeeping: backups-and-housekeeping.md
+  - Security Basics: security-basics.md
+  - Recipes: recipes.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

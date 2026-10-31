@@ -1,0 +1,10 @@
+=== build 2 console (a real failure, kept verbatim) ===
+Started by user labadmin
+Running as SYSTEM
+Building in workspace /home/hatch/workspace/jenkins-labwork/home1/workspace/hello-build
+[hello-build] $ /bin/sh -xe /home/hatch/workspace/jenkins-labwork/tmp/jenkins14830995127701038447.sh
++ git clone /home/hatch/workspace/jenkins-labwork/fixture-repo src
+fatal: destination path 'src' already exists and is not an empty directory.
+Build step 'Execute shell' marked build as failure
+Skipped archiving because build is not successful
+Finished: FAILURE

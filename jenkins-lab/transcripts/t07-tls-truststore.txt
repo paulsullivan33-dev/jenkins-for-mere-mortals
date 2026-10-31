@@ -1,0 +1,13 @@
+=== why HTTPS failed from Java at first, and the fix ===
+Diagnosis (TsDiag): the rebuilt truststore as PKCS12, loaded the way the JVM loads cacerts (no password), exposed 0 certificate entries; as JKS it exposes all 121. Ubuntu ships its java cacerts as JKS for this reason.
+After converting the store to JKS, the same minimal Java HTTPS fetch of https://updates.jenkins.io/stable/latestCore.txt succeeds (see below in lab session).
+
+--- TsDiag.java after the JKS conversion (verbatim) ---
+java.home=/home/hatch/workspace/jenkins-labwork/jdk/usr/lib/jvm/java-21-openjdk-amd64
+load pw=null -> certEntries=121
+load pw=changeit -> certEntries=121
+default TM anchors=121
+
+--- TlsTest.java after the fix (verbatim, warnings trimmed) ---
+HTTP 200
+(body: the current LTS version string, same as t00)

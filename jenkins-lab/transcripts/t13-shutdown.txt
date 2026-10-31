@@ -1,0 +1,5 @@
+=== shutting Jenkins down the clean way (POST /exit) ===
+POST /exit: HTTP 200
+port 18097 released: nothing is listening
+no Jenkins process remains (the two pids a broad pgrep matched were this check's own shell)
+
